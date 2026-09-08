@@ -1,4 +1,4 @@
-! Startup-config last modified at Tue Sep  8 19:45:07 2026 by root
+! Startup-config last modified at Tue Sep  8 20:06:00 2026 by admin
 ! device: P2 (cEOSLab, EOS-4.36.2F-49692818.4362F (engineering build))
 !
 no aaa root
@@ -34,14 +34,14 @@ management api netconf
       vrf MGMT
 !
 interface Ethernet1
-   description PE2
+   description PE02
    no switchport
    ip address 10.10.10.7/31
    isis enable CORE
    isis network point-to-point
 !
 interface Ethernet2
-   description PE1
+   description PE01
    no switchport
    ip address 10.10.10.3/31
    isis enable CORE
@@ -55,7 +55,7 @@ interface Loopback0
 !
 interface Management0
    vrf MGMT
-   ip address 172.100.100.4/24
+   ip address 172.100.100.7/24
 !
 ip routing
 no ip routing vrf MGMT
