@@ -41,15 +41,19 @@ topology:
         UPLINK_MAC: 00:01:01:00:00:01
         TMODE: lacp or none
     PE01:
+      startup-config: configs/PE01.cfg
       env:
         INTFTYPE: et
     PE02:
+      startup-config: configs/PE02.cfg
       env:
         INTFTYPE: et
     P1:
+      startup-config: configs/P1.cfg
       env:
         INTFTYPE: et
     P2:
+      startup-config: configs/P2.cfg
       env:
         INTFTYPE: et
   links:
