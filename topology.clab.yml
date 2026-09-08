@@ -1,0 +1,63 @@
+---
+name: sandbox
+prefix: ""
+
+mgmt:
+  network: mgmt
+  ipv4-subnet: 172.100.100.0/24
+
+topology:
+
+  defaults:
+    kind: arista_ceos
+
+  kinds:
+    arista_ceos:
+      image: arista/ceos:latest
+      env:
+        CLAB_MGMT_VRF: MGMT
+        INTFTYPE: et
+    linux:
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.7
+  nodes:
+    CE1:
+      kind: linux
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.6
+      env:
+        IPV4: 10.10.10.101/24
+        IPV6: 2001:db8:10:10::101/64
+        STATIC_ROUTE: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
+        GW: 10.10.10.1
+        UPLINK_MAC: 00:01:01:00:00:01
+        TMODE: lacp or none
+    CE2:
+      kind: linux
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.6
+      env:
+        IPV4: 10.10.10.101/24
+        IPV6: 2001:db8:10:10::101/64
+        STATIC_ROUTE: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
+        GW: 10.10.10.1
+        UPLINK_MAC: 00:01:01:00:00:01
+        TMODE: lacp or none
+    PE01:
+      env:
+        INTFTYPE: et
+    PE02:
+      env:
+        INTFTYPE: et
+    P1:
+      env:
+        INTFTYPE: et
+    P2:
+      env:
+        INTFTYPE: et
+  links:
+    [
+      { endpoints: [ "PE01:et1", "P1:et1" ] },
+      { endpoints: [ "P1:et2", "PE02:et1" ] },
+      { endpoints: [ "PE02:et2", "P2:et1" ] },
+      { endpoints: [ "PE01:et2", "P2:et2" ] },
+      { endpoints: [ "PE01:et3", "CE1:eth1" ] },
+      { endpoints: [ "PE02:et3", "CE2:eth1" ] }
+    ]

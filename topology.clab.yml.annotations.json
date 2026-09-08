@@ -1,0 +1,72 @@
+{
+  "freeTextAnnotations": [],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "CE1",
+      "position": {
+        "x": 980,
+        "y": 160
+      },
+      "icon": "client",
+      "iconColor": "#16325b",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "CE2",
+      "position": {
+        "x": 1420,
+        "y": 180
+      },
+      "icon": "client",
+      "iconColor": "#16325b",
+      "interfacePattern": "eth{n}"
+    },
+    {
+      "id": "PE01",
+      "position": {
+        "x": 1080,
+        "y": 160
+      },
+      "icon": "pe",
+      "iconColor": "#16325b",
+      "interfacePattern": "et{n}"
+    },
+    {
+      "id": "PE02",
+      "position": {
+        "x": 1320,
+        "y": 180
+      },
+      "icon": "pe",
+      "iconColor": "#16325b",
+      "interfacePattern": "et{n}"
+    },
+    {
+      "id": "P1",
+      "position": {
+        "x": 1220,
+        "y": 100
+      },
+      "icon": "spine",
+      "iconColor": "#16325b",
+      "interfacePattern": "et{n}"
+    },
+    {
+      "id": "P2",
+      "position": {
+        "x": 1220,
+        "y": 240
+      },
+      "icon": "spine",
+      "iconColor": "#16325b",
+      "interfacePattern": "et{n}"
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
