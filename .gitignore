@@ -105,9 +105,11 @@ $RECYCLE.BIN/
 
 # Ignore clab files, but do not ignore the startup configurations created by the `clab save` command
 
-clab-sandbox/*
+/clab-*/**
+!/clab-*/
+!/clab-*/**/
 *.bak
-!clab/init-configs/clab-*/
+!/clab-*/**/flash/startup-config
 
 # ignore cv onboarding token
 clab/cv-onboarding-token

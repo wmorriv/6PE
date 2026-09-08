@@ -1,0 +1,75 @@
+! Startup-config last modified at Tue Sep  8 19:45:07 2026 by root
+! device: P1 (cEOSLab, EOS-4.36.2F-49692818.4362F (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$S67hpaMsopnRzJTJ$aRD2DUVk.ktEsH84RwbgKpsomfu9BAZYFpBpNwQjJrv1Ohkp/nz0ifRetx83sYljhYokP3tD7wQ9pAqUuFrYP.
+!
+management api http-commands
+   no shutdown
+   !
+   vrf MGMT
+      no shutdown
+!
+no service interface inactive port-id allocation disabled
+!
+service routing protocols model multi-agent
+!
+hostname P1
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vrf instance MGMT
+!
+management api gnmi
+   transport grpc default
+      vrf MGMT
+!
+management api netconf
+   transport ssh default
+      vrf MGMT
+!
+interface Ethernet1
+   description PE01
+   no switchport
+   ip address 10.10.10.1/31
+   isis enable CORE
+   isis network point-to-point
+!
+interface Ethernet2
+   description PE02
+   no switchport
+   ip address 10.10.10.5/31
+   isis enable CORE
+   isis network point-to-point
+!
+interface Loopback0
+   ip address 172.27.0.3/32
+   node-segment ipv4 index 3
+   isis enable CORE
+   isis passive
+!
+interface Management0
+   vrf MGMT
+   ip address 172.100.100.6/24
+!
+ip routing
+no ip routing vrf MGMT
+!
+ip route vrf MGMT 0.0.0.0/0 172.100.100.1
+!
+mpls ip
+!
+router isis CORE
+   net 49.0001.0000.0000.0003.00
+   !
+   address-family ipv4 unicast
+   !
+   segment-routing mpls
+      no shutdown
+!
+end
