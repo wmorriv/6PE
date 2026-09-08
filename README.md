@@ -46,8 +46,8 @@ IPv6 traffic between customer edge devices is transported across an IPv4-only MP
 |-----------|--------|
 | PE01 Ethernet3 | `fd00:0:0:1::1/64` |
 | PE02 Ethernet3 | `fd00:0:0:2::1/64` |
-| CE1 eth1 | `2001:db8:10:10::101/64` |
-| CE2 eth1 | `2001:db8:10:10::101/64` |
+| CE1 eth1 | `fd00:0:0:1::10/64` |
+| CE2 eth1 | `fd00:0:0:2::10/64` |
 
 ## Prerequisites
 
