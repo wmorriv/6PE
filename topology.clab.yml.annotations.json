@@ -19,7 +19,7 @@
       "id": "CE2",
       "position": {
         "x": 1420,
-        "y": 180
+        "y": 160
       },
       "icon": "client",
       "iconColor": "#16325b",
@@ -39,7 +39,7 @@
       "id": "PE02",
       "position": {
         "x": 1320,
-        "y": 180
+        "y": 160
       },
       "icon": "pe",
       "iconColor": "#16325b",
