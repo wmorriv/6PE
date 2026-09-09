@@ -86,6 +86,11 @@ show bgp ipv6 unicast
 
 ! Test end-to-end IPv6 reachability from CE1
 docker exec -it CE1 ping6 fd00:0:0:2::1
+docker exec -it CE1 ping6 fd00:0:0:2::10
+
+! Test end-to-end IPv6 reachability from CE2
+docker exec -it CE1 ping6 fd00:0:0:1::1
+docker exec -it CE1 ping6 fd00:0:0:1::10
 ```
 
 ## How It Works
